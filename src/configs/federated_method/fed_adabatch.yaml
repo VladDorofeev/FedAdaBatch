@@ -1,0 +1,14 @@
+_target_: federated_methods.fed_adabatch.fed_adabatch.FedAdaBatch
+theta_norm: 0.9 # use in norm_test, weak_norm_test, horvitz_tompson
+theta_inner: 0.9
+nu_ortho: 5.84
+ht_mk_k: 10000
+checkpoint_path: null
+training_type: "round" # round , iters
+local_iters: 0 # use if training_type == 'iters' set
+tests: ["norm", "inner", "ortho", "horvitz_tompson"] # "norm", "inner", "ortho", "horvitz_tompson" 
+
+
+# We don't look at the tests, but in fact, 
+# we simply recalculate the number of clients each round using their formulas
+recalc_every_round: False 

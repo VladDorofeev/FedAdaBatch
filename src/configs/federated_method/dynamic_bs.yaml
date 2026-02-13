@@ -1,0 +1,19 @@
+_target_: federated_methods.dynamic_bs.dynamic_bs.DynamicBS
+aggregation_method: fedavg # fedavg | fedprox | fednova
+theta_norm: 0.9 # coef in right-hand test
+ht_mk_k: 10000 # amount of ht estimation iterations
+dynamic_inclusion: -1 # 0=static cache, >0=refresh cache every N rounds, -1=always dynamic
+grad_history_mix: 0.7 # alpha * weighted_sum + (1-alpha) * old_grad
+round_to_grad_forgetting: 5 # forget old_grad after this amount round (old_grad use in approx grad for client)
+prop_limit_expand: 2 # we can't expand amount of client bigger than prop_limit_expand * |cur_S|, 0 -- off limit
+selection_depth: 3 # number of random trials to decide shrink/expand step
+times_in_a_row: 0 # early-stop threshold for consecutive successes/failures (0=off)
+sample_step: 1 # sample from [n_new-(k-1), n_new+(k-1)], k=sample_step
+adaptive_window: 1 # call define_amount_clients every N rounds (1=every round)
+num_workers: 100
+tau: 0.2 # temperature for stochastic fedcor/pow selection
+momentum_beta: 0.0 # momentum factor for amount_of_clients update (0=off)
+load_precomputed_cache: false # load dynamic_bs_ht_cache.npz from Hydra run dir before estimating
+eps: 1e-5
+debug: false
+min_number_clients: 2 # minimal number of clients to select
