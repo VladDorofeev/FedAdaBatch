@@ -1,5 +1,5 @@
 
-# Federated Learning Framework
+# FedAdaBatch: An Adaptive Client Size Selector for Federated Learning
 
 ## Table of contents
 0. [Running Experiments](docs/experiments.md) -- Run the command to get reproducibility
