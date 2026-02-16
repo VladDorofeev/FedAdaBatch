@@ -11,7 +11,6 @@ defaults:
     - manager: base_manager
     - losses@loss: ce
     - optimizer: adam
-    - preaggregator: null
     - _self_
 
 random_state: 42
